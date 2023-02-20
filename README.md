@@ -1,6 +1,9 @@
 ## : Code for "Deep learning-enabled detection of pneumoperitoneum in supine and erect abdominal radiography: a retrospective study with external validations"
-### DISTL: Distillation for self-supervised and self-train learning
+### This is a code for application of DISTL (Distillation for self-supervised and self-train learning) along with the knowledge transfer for pneumoperitonuem diagnosis.
 
+<div align="center">
+  <img src="./assets/teaser.PNG">
+</div>
 
 ### [Paper] | [Official Pytorch code](https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum)
 More detailed explanations are provided in official github repository below.
@@ -9,7 +12,7 @@ https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum
 
 > **DISTL: Distillation for self-supervised and self-train learning**<br>
 >
-> *DISTL is a deep learning algorithm developed to gradually improve the performance of AI model with the accumulating data every year without any annotation by experts. For demo, we provide python codes where you can train, evaluate and visualize the attention of the model.*
+> *DISTL is a deep learning algorithm developed to gradually improve the performance of AI model with the accumulating data every year without any annotation by experts. This is a code for application of DISTL for along with the knowledge transfer for pneumoperitonuem diagnosis. For more details of the DISTL method, please refer to our previous work (https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum)*
 
 ## System requirements
 ### General requirements
