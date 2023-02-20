@@ -2,7 +2,7 @@
 ### This is a code for application of DISTL (Distillation for self-supervised and self-train learning) along with the KT (knowledge transfer) for enhanced diagnosis of pneumoperitonuem.
 
 <div align="center">
-  <img src="./assets/teaser.PNG">
+  <img src="./assets/teaser.png">
 </div>
 
 ### [Paper] | [Official Pytorch code](https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum)
@@ -144,6 +144,10 @@ The attentions of Vision transformer model can be visualized with following code
 ```
 > python visualize_attention.py --pretrained_weights /PATH/FOLD3/checkpint.pth --image_dir /PATH/DATA/
 ```
+
+<div align="center">
+  <img src="./assets/result.png">
+</div>
 
 #### If you have any questions, please contact us via:
 depecher@kaist.ac.kr
