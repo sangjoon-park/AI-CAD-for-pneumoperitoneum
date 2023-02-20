@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>IntelliJ Markdown Preview</title>               
+  <style>/* Reworked by IntelliJ Team The MIT License (MIT) Copyright (c) JetBrains Adapted from https://github.com/sindresorhus/github-markdown-css The MIT License (MIT) Copyright (c) Sindre Sorhus &lt;sindresorhus@gmail.com&gt; (sindresorhus.com) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */ @font-face { font-family: octicons-anchor; src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff'); } body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: Helvetica, Arial, freesans, sans-serif; font-size: 14px; line-height: 1.6; word-wrap: break-word; margin: 0 2em; } strong { font-weight: bold; } img { border: 0; } input { color: inherit; font: inherit; margin: 0; line-height: normal; } html input[disabled] { cursor: default; } input[type="checkbox"] { box-sizing: border-box; padding: 0; } body * { box-sizing: border-box; } input { font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; } a { text-decoration: none; } a:hover, a:active { text-decoration: underline; } hr { height: 1px; padding: 0; margin: 20px 0; border: 0 none; } hr:before { display: table; content: ""; } hr:after { display: table; clear: both; content: ""; } blockquote { margin: 0; } ul, ol { padding: 0; margin-top: 0; margin-bottom: 0; } ol ol, ul ol { list-style-type: lower-roman; } ul ul ol, ul ol ol, ol ul ol, ol ol ol { list-style-type: lower-alpha; } dd { margin-left: 0; } .octicon { font: normal normal normal 16px/1 octicons-anchor; display: inline-block; text-decoration: none; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .octicon-link:before { content: '\f05c'; } .markdown-body &gt; *:first-child { margin-top: 0 !important; } .markdown-body &gt; *:last-child { margin-bottom: 0 !important; } .anchor { position: absolute; top: 0; left: 0; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; } .anchor:focus { outline: none; } h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; } h1 .octicon-link, h2 .octicon-link, h3 .octicon-link, h4 .octicon-link, h5 .octicon-link, h6 .octicon-link { display: none; color: #000; vertical-align: middle; } h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; } h1:hover .anchor .octicon-link, h2:hover .anchor .octicon-link, h3:hover .anchor .octicon-link, h4:hover .anchor .octicon-link, h5:hover .anchor .octicon-link, h6:hover .anchor .octicon-link { display: inline-block; } h1 { font-size: 2.2em; padding-top: 0.6em; } h1 .anchor { line-height: 1; } h2 { font-size: 1.8em; line-height: 1.2; padding-top: 0.6em; } h2 .anchor { line-height: 1.2; } h3 { font-size: 1.3em; line-height: 1; padding-top: 0.6em; } h3 .anchor { line-height: 1.2; } h4 { font-size: 1em; } h4 .anchor { line-height: 1.2; } h5 { font-size: 1em; } h5 .anchor { line-height: 1.1; } h6 { font-size: 1em; } h6 .anchor { line-height: 1.1; } p, blockquote, ul, ol, dl, table, pre { margin-top: 16px; margin-bottom: 16px; } ul, ol { padding-left: 2em; } ul ul, ul ol, ol ol, ol ul { margin-top: 0; margin-bottom: 0; } li &gt; p { margin-top: 0; margin-bottom: 0; } dl { padding: 0; } dl dt { padding: 0; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; } dl dd { padding: 0 16px; margin-bottom: 16px; } blockquote { padding: 10px 10px 10px 16px; border-left: 2px solid; border-radius: 0 3px 3px 0; } blockquote &gt; :first-child { margin-top: 0; } blockquote &gt; :last-child { margin-bottom: 0; } table { display: block; width: 100%; overflow: auto; word-break: normal; border-collapse: collapse; border-spacing: 0; font-size: 1em; } table th { font-weight: bold; } table th, table td { padding: 6px 13px; background: transparent; } table tr { border-top: 1px solid; } img { max-width: 100%; box-sizing: border-box; } code { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } pre &gt; code { padding: 0; margin: 0; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0; } .highlight { margin-bottom: 16px; } .highlight pre, pre { font: 0.85em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 16px; overflow: auto; line-height: 1.45; border-radius: 3px; } pre code { display: inline; max-width: initial; padding: 0; margin: 0; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0; } pre code:before, pre code:after { content: normal; } kbd { font: 0.9em "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace; padding: 0.2em 0.4em; margin: 2px; border-radius: 3px; } .task-list-item { list-style-type: none; } .task-list-item + .task-list-item { margin-top: 3px; } .task-list-item input { margin: 0 0.35em 0.25em -0.6em; vertical-align: middle; } :checked + .radio-label { z-index: 1; position: relative; } span.user-del { text-decoration: line-through; } ::-webkit-scrollbar { width: 6px; height: 6px; } ::-webkit-scrollbar-thumb { -webkit-border-radius: 10px; } ::-webkit-scrollbar-track:vertical { -webkit-box-shadow: -1px 0 0 #ededed; } ::-webkit-scrollbar-track { background-color: transparent; } ::-webkit-scrollbar { width: 6px; } </style>
+  <style>body { background-color: rgba(255, 255, 255, 255.0); font-size: 14px !important; } body, p, blockquote, ul, ol, dl, table, pre, code, tr { color: rgba(8, 8, 8, 255.0); } a { color: rgba(36, 112, 179, 255.0); } table td, table th { border: 1px solid rgba(209, 209, 209, 255.0); } hr { background-color: rgba(209, 209, 209, 255.0); } kbd, tr { border: 1px solid rgba(209, 209, 209, 255.0); } h6 { color: rgba(153, 153, 153, 255.0); } blockquote { border-left: 2px solid rgba(36, 112, 179, 0.4); } ::-webkit-scrollbar-thumb { background-color: rgba(115, 115, 115, 0.2); } blockquote, code, pre { background-color: rgba(212, 222, 231, 0.24705882352941178); }</style>
+  <style>/* Copyright 2000-2021 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. */ .code-fence-highlighter-copy-button { float: right; display: flex; } .code-fence-highlighter-copy-button-icon { max-width: 1em; } .code-fence:hover .code-fence-highlighter-copy-button-icon { /*noinspection CssUnknownTarget*/ content: url("copy-button-copy-icon.png"); } .code-fence:hover .code-fence-highlighter-copy-button:hover .code-fence-highlighter-copy-button-icon { /*noinspection CssUnknownTarget*/ content: url("copy-button-copy-icon-hovered.png"); cursor: pointer; } </style>
+  <style>/* Copyright 2000-2021 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. */ .run-icon &gt; img { max-width: 1em; vertical-align: text-top; margin-right: 0.3em; } .code-block { position: absolute; left: 1em; } .hidden { display: none; }</style>
+ </head> 
+ <body>
+  <div md-src-pos="0..6079">
+   <h2 md-src-pos="0..44">: Code for "AI can evolve without labels"</h2>
+   <h3 md-src-pos="45..112">DISTL: Distillation for self-supervised and self-train learning</h3>
+   <h3 md-src-pos="115..205">[Paper] | <a href="https://github.com/sangjoon-park/AI-Can-Self-Evolve" md-src-pos="129..205">Official Pytorch code</a></h3>
+   <p md-src-pos="206..282"><span md-src-pos="206..282">More detailed explanations are provided in official github repository below.</span></p>
+   <p md-src-pos="284..335"><a href="https://github.com/sangjoon-park/AI-Can-Self-Evolve" md-src-pos="284..335">https://github.com/sangjoon-park/AI-Can-Self-Evolve</a></p>
+   <blockquote md-src-pos="337..689">
+    <p md-src-pos="339..410"><strong md-src-pos="339..406">DISTL: Distillation for self-supervised and self-train learning</strong><br></p>
+    <p md-src-pos="415..689"><em md-src-pos="415..689">DISTL is a deep learning algorithm developed to gradually improve the performance of AI model with the accumulating data every year without any annotation by experts. For demo, we provide python codes where you can train, evaluate and visualize the attention of the model.</em></p>
+   </blockquote>
+   <h2 md-src-pos="691..713">System requirements</h2>
+   <h3 md-src-pos="714..738">General requirements</h3>
+   <h4 md-src-pos="739..746">OS</h4>
+   <ul md-src-pos="747..761">
+    <li md-src-pos="747..761">Ubuntu 20.04</li>
+   </ul>
+   <h4 md-src-pos="763..776">Software</h4>
+   <ul md-src-pos="777..869">
+    <li md-src-pos="777..801">Python 3.8 (tested on)</li>
+    <li md-src-pos="802..809">Conda</li>
+    <li md-src-pos="810..837">Pytorch 1.8.0 (tested on)</li>
+    <li md-src-pos="838..869">CUDA version 11.1 (tested on)</li>
+   </ul>
+   <h4 md-src-pos="871..884">Hardware</h4>
+   <ul md-src-pos="885..1010">
+    <li md-src-pos="885..939">CPU or GPU that supports CUDA CuDNN and Pytorch 1.8.</li>
+    <li md-src-pos="940..971">We tested on GeFore RTX 3090.</li>
+    <li md-src-pos="972..1010">We recommend RAM of more than 32 GB.</li>
+   </ul>
+   <h2 md-src-pos="1012..1033">Installation guide</h2>
+   <h3 md-src-pos="1034..1049">Instruction</h3>
+   <ul md-src-pos="1050..1146">
+    <li md-src-pos="1050..1146">Install Pytorch and other dependencies. It can be easily installed with requirements.txt file.</li>
+   </ul>
+   <pre class="code-fence" md-src-pos="1147..1189"><code md-src-pos="1147..1189">
+     <div class="code-fence-highlighter-copy-button" data-fence-content="PiAgcGlwIGluc3RhbGwgLXIgcmVxdWlyZW1lbnRzLnR4dAo=">
+    
+      <img class="code-fence-highlighter-copy-button-icon">
+
+     </div><span md-src-pos="1147..1151"></span><span md-src-pos="1151..1188">&gt;  pip install -r requirements.txt</span>
+<span md-src-pos="1189..1189"></span><span md-src-pos="1186..1189"></span></code></pre>
+   <h2 md-src-pos="1191..1210">Data preparation</h2>
+   <h3 md-src-pos="1211..1231">Downloading data</h3>
+   <p md-src-pos="1233..1309"><span md-src-pos="1233..1309">The open-source datasets used in paper can be obtained from following links.</span></p>
+   <h4 md-src-pos="1311..1344">Normal and Tuberculosis CXRs</h4>
+   <ul md-src-pos="1345..2118">
+    <li md-src-pos="1345..1419">CheXpert data (<a href="https://stanfordmlgroup.github.io/competitions/chexpert/" md-src-pos="1362..1418">https://stanfordmlgroup.github.io/competitions/chexpert/</a>)</li>
+    <li md-src-pos="1420..1519">India tuberculosis repository (<a href="https://www.kaggle.com/raddar/chest-xrays-tuberculosis-from-india" md-src-pos="1453..1518">https://www.kaggle.com/raddar/chest-xrays-tuberculosis-from-india</a>)</li>
+    <li md-src-pos="1520..1625">Montgomery County tuberculosis data (<a href="https://www.kaggle.com/raddar/tuberculosis-chest-xrays-montgomery" md-src-pos="1559..1624">https://www.kaggle.com/raddar/tuberculosis-chest-xrays-montgomery</a>)</li>
+    <li md-src-pos="1626..1719">Shenzen tuberculosis data (<a href="https://www.kaggle.com/raddar/tuberculosis-chest-xrays-shenzhen" md-src-pos="1655..1718">https://www.kaggle.com/raddar/tuberculosis-chest-xrays-shenzhen</a>)</li>
+    <li md-src-pos="1720..1800">Belarus tuberculosis data (<a href="https://github.com/frapa/tbcnn/tree/master/belarus" md-src-pos="1749..1799">https://github.com/frapa/tbcnn/tree/master/belarus</a>)</li>
+    <li md-src-pos="1801..1881">PADChest repository (<a href="https://github.com/auriml/Rx-thorax-automatic-captioning" md-src-pos="1824..1880">https://github.com/auriml/Rx-thorax-automatic-captioning</a>)</li>
+    <li md-src-pos="1882..1945">TBX 11k repository (<a href="https://www.kaggle.com/usmanshams/tbx-11" md-src-pos="1904..1944">https://www.kaggle.com/usmanshams/tbx-11</a>)</li>
+    <li md-src-pos="1946..2046">NIH normal data (<a href="https://cloud.google.com/healthcare-api/docs/resources/public-datasets/nih-chest" md-src-pos="1965..2045">https://cloud.google.com/healthcare-api/docs/resources/public-datasets/nih-chest</a>)</li>
+    <li md-src-pos="2047..2118">NIH tuberculosis data (<a href="https://tbportals.niaid.nih.gov/download-data" md-src-pos="2072..2117">https://tbportals.niaid.nih.gov/download-data</a>)</li>
+   </ul>
+   <h4 md-src-pos="2120..2142">Pneumothorax CXRs</h4>
+   <ul md-src-pos="2143..2246">
+    <li md-src-pos="2143..2246">SIIM-ACR Pneumohtorax Segmentation data (<a href="https://www.kaggle.com/c/siim-acr-pneumothorax-segmentation" md-src-pos="2186..2245">https://www.kaggle.com/c/siim-acr-pneumothorax-segmentation</a>)</li>
+   </ul>
+   <h4 md-src-pos="2248..2266">COVID-19 CXRs</h4>
+   <ul md-src-pos="2267..2384">
+    <li md-src-pos="2267..2333">BIMCV repository (<a href="https://github.com/BIMCV-CSUSP/BIMCV-COVID-19" md-src-pos="2287..2332">https://github.com/BIMCV-CSUSP/BIMCV-COVID-19</a>)</li>
+    <li md-src-pos="2334..2384">Brixia COVID-19 data (<a href="https://brixia.github.io/" md-src-pos="2358..2383">https://brixia.github.io/</a>)</li>
+   </ul>
+   <p md-src-pos="2386..2473"><span md-src-pos="2386..2406">From these datasets,</span> <span md-src-pos="2407..2427">we only used normal,</span> <span md-src-pos="2428..2441">tuberculosis,</span> <span md-src-pos="2442..2473">pneumothorax and COVID-19 CXRs.</span></p>
+   <p md-src-pos="2475..2791"><span md-src-pos="2475..2512">Other parts of the institutional data</span> (<span md-src-pos="2514..2518">AMC,</span> <span md-src-pos="2519..2524">CNUH,</span> <span md-src-pos="2525..2529">YNU,</span> <span md-src-pos="2530..2534">KNUH</span>) <span md-src-pos="2536..2641">used in this study cannot be shared without the signed agreement as they may contain private information.</span> <span md-src-pos="2642..2650">However,</span> <span md-src-pos="2651..2790">we found that similar results can be obtained when using an open-source repository for validation and the others for the model development.</span></p>
+   <p md-src-pos="2793..2905"><span md-src-pos="2793..2805">For example,</span> <span md-src-pos="2806..2905">you can use Shenzen tuberculosis data containing 327 normal and 335 tuberculosis CXRs as test data.</span></p>
+   <h3 md-src-pos="2907..2929">Data preprocessing</h3>
+   <p md-src-pos="2930..3025"><span md-src-pos="2930..2957">After downloading all data,</span> <span md-src-pos="2958..2963">dicom</span> (<span md-src-pos="2965..2969">.dcm</span>) <span md-src-pos="2971..3011">files should first be converted to image</span> (<span md-src-pos="3013..3017">.png</span>) <span md-src-pos="3019..3025">files.</span></p>
+   <pre class="code-fence" md-src-pos="3026..3095"><code md-src-pos="3026..3095">
+     <div class="code-fence-highlighter-copy-button" data-fence-content="PiAgcHl0aG9uIGRjbV90b19ucHkucHkgLS1kaXIgUEFUSC9EQ00vIC0tc2F2ZV9kaXIgUEFUSC9TQVZFLwo=">
+    
+      <img class="code-fence-highlighter-copy-button-icon">
+
+     </div><span md-src-pos="3026..3030"></span><span md-src-pos="3030..3094">&gt;  python dcm_to_npy.py --dir PATH/DCM/ --save_dir PATH/SAVE/</span>
+<span md-src-pos="3095..3095"></span><span md-src-pos="3092..3095"></span></code></pre>
+   <p md-src-pos="3096..3235"><span md-src-pos="3096..3101">Then,</span> <span md-src-pos="3102..3154">locate all normal data into a folder name containing</span> <em md-src-pos="3155..3163">Normal</em> <span md-src-pos="3164..3219">and all tuberculosis data into a folder name containing</span> <em md-src-pos="3220..3234">Tuberculosis</em><span md-src-pos="3234..3235">.</span></p>
+   <p md-src-pos="3237..3479"><span md-src-pos="3237..3242">Next,</span> <span md-src-pos="3243..3312">locate all training data to a folder and test data to another folder,</span> <span md-src-pos="3313..3339">and execute data splitter.</span> <span md-src-pos="3340..3403">It automatically split training data into small labeled subsets</span> (<span md-src-pos="3405..3408">10%</span>) <span md-src-pos="3410..3441">and 3 folded unlabeled subsets,</span> <span md-src-pos="3442..3479">and save test data in another folder.</span></p>
+   <pre class="code-fence" md-src-pos="3480..3588"><code md-src-pos="3480..3588">
+     <div class="code-fence-highlighter-copy-button" data-fence-content="PiAgcHl0aG9uIGRhdGFfc3BsaXR0ZXIucHkgLS10cmFpbl9mb2xkZXIgUEFUSC9UUkFJTi8gLS10ZXN0X2ZvbGRlciBQQVRIL1RFU1QvIC0tc2F2ZV9kaXIgUEFUSC9TQVZFLwo=">
+    
+      <img class="code-fence-highlighter-copy-button-icon">
+
+     </div><span md-src-pos="3480..3484"></span><span md-src-pos="3484..3587">&gt;  python data_splitter.py --train_folder PATH/TRAIN/ --test_folder PATH/TEST/ --save_dir PATH/SAVE/</span>
+<span md-src-pos="3588..3588"></span><span md-src-pos="3585..3588"></span></code></pre>
+   <p md-src-pos="3590..3657"><span md-src-pos="3590..3621">After successful preprocessing,</span> <span md-src-pos="3622..3657">your data will be located as below.</span></p>
+   <pre class="code-fence" md-src-pos="3659..4212"><code md-src-pos="3659..4212">
+     <div class="code-fence-highlighter-copy-button" data-fence-content="LS0tIHNhdmVfZGlyCiAgICAgLS0tIGxhYmVsZWQgKGNvbnRhaW5pbmcgYWJvdXQgMTAlIG9mIHRyYWluaW5nIGRhdGEpCiAgICAgICAgICAgIC0tLSB4eHgucG5nCiAgICAgICAgICAgIC0tLSAuLi4KICAgICAtLS0gZm9sZF8wICh1bmxhYmVsZWQgZm9sZCBjb250YWluaW5nIGFib3V0IDMwJSBvZiB0cmFpbmluZyBkYXRhKQogICAgICAgICAgICAtLS0geHh4LnBuZwogICAgICAgICAgICAtLS0gLi4uCiAgICAgLS0tIGZvbGRfMSAodW5sYWJlbGVkIGZvbGQgY29udGFpbmluZyBhYm91dCAzMCUgb2YgdHJhaW5pbmcgZGF0YSkKICAgICAgICAgICAgLS0tIHh4eC5wbmcKICAgICAgICAgICAgLS0tIC4uLgogICAgIC0tLSBmb2xkXzIgKHVubGFiZWxlZCBmb2xkIGNvbnRhaW5pbmcgYWJvdXQgMzAlIG9mIHRyYWluaW5nIGRhdGEpCiAgICAgICAgICAgIC0tLSB4eHgucG5nCiAgICAgICAgICAgIC0tLSAuLi4KICAgICAtLS0gdGVzdCAoY29udGFpbmluZyB2YWxpZGF0aW9uIGRhdGEpCiAgICAgICAgICAgIC0tLSB4eHgucG5nCiAgICAgICAgICAgIC0tLSAuLi4K">
+    
+      <img class="code-fence-highlighter-copy-button-icon">
+
+     </div><span md-src-pos="3659..3663"></span><span md-src-pos="3663..3675">--- save_dir</span>
+<span md-src-pos="3676..3732">     --- labeled (containing about 10% of training data)</span>
+<span md-src-pos="3733..3756">            --- xxx.png</span>
+<span md-src-pos="3757..3776">            --- ...</span>
+<span md-src-pos="3777..3847">     --- fold_0 (unlabeled fold containing about 30% of training data)</span>
+<span md-src-pos="3848..3871">            --- xxx.png</span>
+<span md-src-pos="3872..3891">            --- ...</span>
+<span md-src-pos="3892..3962">     --- fold_1 (unlabeled fold containing about 30% of training data)</span>
+<span md-src-pos="3963..3986">            --- xxx.png</span>
+<span md-src-pos="3987..4006">            --- ...</span>
+<span md-src-pos="4007..4077">     --- fold_2 (unlabeled fold containing about 30% of training data)</span>
+<span md-src-pos="4078..4101">            --- xxx.png</span>
+<span md-src-pos="4102..4121">            --- ...</span>
+<span md-src-pos="4122..4164">     --- test (containing validation data)</span>
+<span md-src-pos="4165..4188">            --- xxx.png</span>
+<span md-src-pos="4189..4208">            --- ...</span>
+<span md-src-pos="4209..4209"></span><span md-src-pos="4209..4212"></span></code></pre>
+   <h2 md-src-pos="4214..4244">Download pretrained weights</h2>
+   <p md-src-pos="4245..4351"><span md-src-pos="4245..4323">You can download the pretrained weights on the CheXpert dataset in link below,</span> <span md-src-pos="4324..4351">which should be located as,</span></p>
+   <p md-src-pos="4353..4435"><a href="https://drive.google.com/file/d/16y3eJRYQCg-B8rg9eB3XRA-6PcfHCNmA/view?usp=sharing" md-src-pos="4353..4435">https://drive.google.com/file/d/16y3eJRYQCg-B8rg9eB3XRA-6PcfHCNmA/view?usp=sharing</a></p>
+   <pre class="code-fence" md-src-pos="4437..4479"><code md-src-pos="4437..4479">
+     <div class="code-fence-highlighter-copy-button" data-fence-content="Li9wcmV0cmFpbmVkX3dlaWdodHMvcHJldHJhaW4uY2twdAo=">
+    
+      <img class="code-fence-highlighter-copy-button-icon">
+
+     </div><span md-src-pos="4437..4441"></span><span md-src-pos="4441..4475">./pretrained_weights/pretrain.ckpt</span>
+<span md-src-pos="4476..4476"></span><span md-src-pos="4476..4479"></span></code></pre>
+   <h2 md-src-pos="4481..4500">Training a model</h2>
+   <p md-src-pos="4501..4596"><span md-src-pos="4501..4534">The pretrained Vision transformer</span> (<span md-src-pos="4536..4542">ViT-S8</span>) <span md-src-pos="4544..4565">weight is provided in</span> <em md-src-pos="4566..4588">./pretrained_weights</em> <span md-src-pos="4589..4596">folder.</span></p>
+   <p md-src-pos="4598..4661"><span md-src-pos="4598..4604">First,</span> <span md-src-pos="4605..4661">train the initial model with small initial labeled data.</span></p>
+   <pre class="code-fence" md-src-pos="4662..4811"><code md-src-pos="4662..4811">
+     <div class="code-fence-highlighter-copy-button" data-fence-content="PiBweXRob24gcHJhdHJhaW4ucHkgLS1uYW1lIExBQkVMRUQgLS1wcmV0cmFpbmVkX2RpciAuL3ByZXRyYWluZWRfd2VpZ2h0cy9wcmV0cmFpbi5ja3B0IFwKLS1kYXRhX3BhdGggL1BBVEgvREFUQS8gLS1vdXRwdXRfZGlyIC9QQVRIL0xBQkVMRUQvCg==">
+    
+      <img class="code-fence-highlighter-copy-button-icon">
+
+     </div><span md-src-pos="4662..4666"></span><span md-src-pos="4666..4758">&gt; python pratrain.py --name LABELED --pretrained_dir ./pretrained_weights/pretrain.ckpt \</span>
+<span md-src-pos="4759..4810">--data_path /PATH/DATA/ --output_dir /PATH/LABELED/</span>
+<span md-src-pos="4811..4811"></span><span md-src-pos="4808..4811"></span></code></pre>
+   <p md-src-pos="4812..4911"><span md-src-pos="4812..4817">Then,</span> <span md-src-pos="4818..4872">iteratively improve the model with the proposed DISTL,</span> <span md-src-pos="4873..4911">increasing the size of unlabeled data.</span></p>
+   <p md-src-pos="4913..5025"><span md-src-pos="4913..5025">Note that the resulting weight after training of this iteration is used as the starting point at next iteration.</span></p>
+   <pre class="code-fence" md-src-pos="5026..5517"><code md-src-pos="5026..5517">
+     <div class="code-fence-highlighter-copy-button" data-fence-content="IyBJdGVyYXRpb24gMQo+IHB5dGhvbiBtYWluX3J1bi5weSAtLW5hbWUgRk9MRDEgLS1wcmV0cmFpbmVkX2RpciAvUEFUSC9MQUJFTEVEL2NoZWNrcG9pbnQucHRoIFwKLS1kYXRhX3BhdGggL1BBVEgvREFUQS8gLS1vdXRwdXRfZGlyIC9QQVRIL0ZPTEQxLyAtLXRvdGFsX2ZvbGRzIDEKCiMgSXRlcmF0aW9uIDIKPiBweXRob24gbWFpbl9ydW4ucHkgLS1uYW1lIEZPTEQyIC0tcHJldHJhaW5lZF9kaXIgL1BBVEgvRk9MRDEvY2hlY2twb2ludC5wdGggXAotLWRhdGFfcGF0aCAvUEFUSC9EQVRBLyAtLW91dHB1dF9kaXIgL1BBVEgvRk9MRDIvIC0tdG90YWxfZm9sZHMgMgoKIyBJdGVyYXRpb24gMwo+IHB5dGhvbiBtYWluX3J1bi5weSAtLW5hbWUgRk9MRDMgLS1wcmV0cmFpbmVkX2RpciAvUEFUSC9GT0xEMi9jaGVja3BvaW50LnB0aCBcCi0tZGF0YV9wYXRoIC9QQVRIL0RBVEEvIC0tb3V0cHV0X2RpciAvUEFUSC9GT0xEMy8gLS10b3RhbF9mb2xkcyAzCg==">
+    
+      <img class="code-fence-highlighter-copy-button-icon">
+
+     </div><span md-src-pos="5026..5030"></span><span md-src-pos="5030..5043"># Iteration 1</span>
+<span md-src-pos="5044..5128">&gt; python main_run.py --name FOLD1 --pretrained_dir /PATH/LABELED/checkpoint.pth \</span>
+<span md-src-pos="5129..5194">--data_path /PATH/DATA/ --output_dir /PATH/FOLD1/ --total_folds 1</span>
+<span md-src-pos="5195..5195"></span>
+<span md-src-pos="5196..5209"># Iteration 2</span>
+<span md-src-pos="5210..5292">&gt; python main_run.py --name FOLD2 --pretrained_dir /PATH/FOLD1/checkpoint.pth \</span>
+<span md-src-pos="5293..5358">--data_path /PATH/DATA/ --output_dir /PATH/FOLD2/ --total_folds 2</span>
+<span md-src-pos="5359..5359"></span>
+<span md-src-pos="5360..5373"># Iteration 3</span>
+<span md-src-pos="5374..5456">&gt; python main_run.py --name FOLD3 --pretrained_dir /PATH/FOLD2/checkpoint.pth \</span>
+<span md-src-pos="5457..5522">--data_path /PATH/DATA/ --output_dir /PATH/FOLD3/ --total_folds 3</span>
+<span md-src-pos="5523..5523"></span><span md-src-pos="5514..5517"></span></code></pre>
+   <h2 md-src-pos="5518..5539">Evaluating a model</h2>
+   <p md-src-pos="5540..5609"><span md-src-pos="5540..5578">You can evaluate the model performance</span> (<span md-src-pos="5580..5583">AUC</span>) <span md-src-pos="5585..5609">with the following code.</span></p>
+   <pre class="code-fence" md-src-pos="5610..5754"><code md-src-pos="5610..5754">
+     <div class="code-fence-highlighter-copy-button" data-fence-content="PiBweXRob24gZXZhbF9maW5ldHVuZS5weSAtLW5hbWUgRVhQX05BTUUgLS1wcmV0cmFpbmVkX2RpciAvUEFUSC9GT0xEMy9jaGVja3BvaW50LnB0aCBcCi0tZGF0YV9wYXRoIC9QQVRIL0RBVEEvIC0tY2hlY2twb2ludF9rZXkgc3R1ZGVudAo=">
+    
+      <img class="code-fence-highlighter-copy-button-icon">
+
+     </div><span md-src-pos="5610..5614"></span><span md-src-pos="5614..5704">&gt; python eval_finetune.py --name EXP_NAME --pretrained_dir /PATH/FOLD3/checkpoint.pth \</span>
+<span md-src-pos="5705..5753">--data_path /PATH/DATA/ --checkpoint_key student</span>
+<span md-src-pos="5754..5754"></span><span md-src-pos="5751..5754"></span></code></pre>
+   <h2 md-src-pos="5756..5780">Visualizing attention</h2>
+   <p md-src-pos="5781..5862"><span md-src-pos="5781..5862">The attentions of Vision transformer model can be visualized with following code.</span></p>
+   <pre class="code-fence" md-src-pos="5863..6000"><code md-src-pos="5863..6000">
+     <div class="code-fence-highlighter-copy-button" data-fence-content="PiBweXRob24gdmlzdWFsaXplX2F0dGVudGlvbi5weSAtLXByZXRyYWluZWRfd2VpZ2h0cyAvUEFUSC9GT0xEMy9jaGVja3BpbnQucHRoIFwKLS1pbWFnZV9kaXIgL1BBVEgvREFUQS8gLS1jaGVja3BvaW50X2tleSBzdHVkZW50Cg==">
+    
+      <img class="code-fence-highlighter-copy-button-icon">
+
+     </div><span md-src-pos="5863..5867"></span><span md-src-pos="5867..5950">&gt; python visualize_attention.py --pretrained_weights /PATH/FOLD3/checkpint.pth \</span>
+<span md-src-pos="5951..5999">--image_dir /PATH/DATA/ --checkpoint_key student</span>
+<span md-src-pos="6000..6000"></span><span md-src-pos="5997..6000"></span></code></pre>
+   <h4 md-src-pos="6002..6056">If you have any questions, please contact us via:</h4>
+   <p md-src-pos="6057..6077"><span md-src-pos="6057..6077">depecher@kaist.ac.kr</span></p>
+  </div>
+ </body>
+</html>
