@@ -1,11 +1,11 @@
-## : Code for "AI can evolve without labels"
+## : Code for "Deep learning-enabled detection of pneumoperitoneum in supine and erect abdominal radiography: a retrospective study with external validations"
 ### DISTL: Distillation for self-supervised and self-train learning
 
 
-### [Paper] | [Official Pytorch code](https://github.com/sangjoon-park/AI-Can-Self-Evolve)
+### [Paper] | [Official Pytorch code](https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum)
 More detailed explanations are provided in official github repository below.
 
-https://github.com/sangjoon-park/AI-Can-Self-Evolve
+https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum
 
 > **DISTL: Distillation for self-supervised and self-train learning**<br>
 >
