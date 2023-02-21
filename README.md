@@ -50,49 +50,30 @@ The CheXpert data is an open-sourced large corpus of chest radiographs containin
 
 Due to the patient privacy issue, the abdominal radiograph data cannot be uploaded, and can be accessed after the formal consent by contacting the first author (depecher@kaist.ac.kr) or corresponding author (seraph377@gmail.com).
 
-## Pretrained weights
-You can download the pretrained weights on the CheXpert dataset in link below, which should be located as,
-
-https://drive.google.com/file/d/16y3eJRYQCg-B8rg9eB3XRA-6PcfHCNmA/view?usp=sharing
-
-```
-./pretrained_weights/pretrain.ckpt
-```
-
 ## Training a model
-The pretrained Vision transformer (ViT-S8) weight is provided in *./pretrained_weights* folder.
+
+Before the training, the pre-trained weights on CheXpert data should be prepared.
 
 First, train the initial model with small initial labeled data.
 ```
-> python pratrain.py --name LABELED --pretrained_dir ./pretrained_weights/pretrain.ckpt --data_path /PATH/DATA/ 
-\--output_dir /PATH/LABELED/
+> python pratrain.py --name EXP_NAME --pretrained_dir /PATH/TO/PRETRAIN_WEIGHT --data_train /PATH/DATA/LABEL/ --view supine
 ```
-Then, iteratively improve the model with the proposed DISTL, increasing the size of unlabeled data.
+Then, iteratively improve the model with the proposed DISTL, with larger number of unlabeled data.
 
-Note that the resulting weight after training of this iteration is used as the starting point at next iteration.
 ```
-# Iteration 1
-> python main_run.py --name FOLD1 --pretrained_dir /PATH/LABELED/checkpoint.pth --data_path /PATH/DATA/ 
-\--output_dir /PATH/FOLD1/ --total_folds 1
-
-# Iteration 2
-> python main_run.py --name FOLD2 --pretrained_dir /PATH/FOLD1/checkpoint.pth --data_path /PATH/DATA/ 
-\--output_dir /PATH/FOLD2/ --total_folds 2
-
-# Iteration 3
-> python main_run.py --name FOLD3 --pretrained_dir /PATH/FOLD2/checkpoint.pth --data_path /PATH/DATA/ 
-\--output_dir /PATH/FOLD3/ --total_folds 3
+> python main_dino.py --name EXP_NAME --pretrained_dir /PATH/TO/UNLABEL_WEIGHT --data_train /PATH/DATA/UNLABEL/ --view supine
 ```
+
 ## Evaluating a model
 You can evaluate the model performance (AUC) with the following code.
 ```
-> python eval_finetune.py --name EXP_NAME --pretrained_dir /PATH/FOLD3/checkpoint.pth --data_path /PATH/DATA/
+> python eval_finetune.py --name EXP_NAME --pretrained_dir /PATH/TO/WEIGHT --data_test /PATH/DATA/TEST/ --view supine
 ```
 
 ## Visualizing attention
 The attentions of Vision transformer model can be visualized with following code.
 ```
-> python visualize_attention.py --pretrained_weights /PATH/FOLD3/checkpint.pth --image_dir /PATH/DATA/
+> python visualize_attention.py --pretrained_weights /PATH/TO/WEIGHT --image_dir /PATH/DATA/IMAGE
 ```
 
 <div align="center">
