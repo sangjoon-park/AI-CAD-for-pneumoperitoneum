@@ -12,7 +12,7 @@ https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum
 
 > **DISTL: Distillation for self-supervised and self-train learning**<br>
 >
-> *DISTL is a deep learning algorithm developed to gradually improve the performance of AI model with the accumulating data every year without any annotation by experts. This is a code for application of DISTL for along with the knowledge transfer for pneumoperitonuem diagnosis. For more details of the DISTL method, please refer to our previous work (https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum).*
+> *DISTL is a deep learning algorithm developed to gradually improve the performance of AI model with the accumulating data every year without any annotation by experts. This is a code for application of DISTL for along with the knowledge transfer for pneumoperitonuem diagnosis. For more details of the DISTL method, please refer to our previous work (https://github.com/sangjoon-park/AI-Can-Self-Evolve).*
 
 ## System requirements
 ### General requirements
