@@ -12,7 +12,7 @@ https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum
 
 > **DISTL: Distillation for self-supervised and self-train learning**<br>
 >
-> *DISTL is a deep learning algorithm developed to gradually improve the performance of AI model with the accumulating data every year without any annotation by experts. This is a code for application of DISTL for along with the knowledge transfer for pneumoperitonuem diagnosis. For more details of the DISTL method, please refer to our previous work (https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum)*
+> *DISTL is a deep learning algorithm developed to gradually improve the performance of AI model with the accumulating data every year without any annotation by experts. This is a code for application of DISTL for along with the knowledge transfer for pneumoperitonuem diagnosis. For more details of the DISTL method, please refer to our previous work (https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum).*
 
 ## System requirements
 ### General requirements
@@ -37,70 +37,20 @@ https://github.com/sangjoon-park/AI-CAD-for-pneumoperitoneum
 >  pip install -r requirements.txt
 ```
 
-## Data preparation
-### Downloading data
+## Data
+Our work consists of two steps. 
+1. pre-training on a large corpus of chest radiograph (CheXpert) for knowledge transfer.
+2. fine-tune model on abdominal radiograph dataset with DISTL method.
 
-The open-source datasets used in paper can be obtained from following links.
+### Pre-training data (Chest radiograph)
 
-#### Normal and Tuberculosis CXRs
-* CheXpert data (https://stanfordmlgroup.github.io/competitions/chexpert/)
-* India tuberculosis repository (https://www.kaggle.com/raddar/chest-xrays-tuberculosis-from-india)
-* Montgomery County tuberculosis data (https://www.kaggle.com/raddar/tuberculosis-chest-xrays-montgomery)
-* Shenzen tuberculosis data (https://www.kaggle.com/raddar/tuberculosis-chest-xrays-shenzhen)
-* Belarus tuberculosis data (https://github.com/frapa/tbcnn/tree/master/belarus)
-* PADChest repository (https://github.com/auriml/Rx-thorax-automatic-captioning)
-* TBX 11k repository (https://www.kaggle.com/usmanshams/tbx-11)
-* NIH normal data (https://cloud.google.com/healthcare-api/docs/resources/public-datasets/nih-chest)
-* NIH tuberculosis data (https://tbportals.niaid.nih.gov/download-data)
+The CheXpert data is an open-sourced large corpus of chest radiographs containing 14 corresponding label classes, and can be downloaded at https://stanfordmlgroup.github.io/competitions/chexpert/
 
-#### Pneumothorax CXRs
-* SIIM-ACR Pneumohtorax Segmentation data (https://www.kaggle.com/c/siim-acr-pneumothorax-segmentation)
+### Fine-tuning data (Abdominal radiograph)
 
-#### COVID-19 CXRs
-* BIMCV repository (https://github.com/BIMCV-CSUSP/BIMCV-COVID-19)
-* Brixia COVID-19 data (https://brixia.github.io/)
+Due to the patient privacy issue, the abdominal radiograph data cannot be uploaded, and can be accessed after the formal consent by contacting the first author (depecher@kaist.ac.kr) or corresponding author (seraph377@gmail.com).
 
-From these datasets, we only used normal, tuberculosis, pneumothorax and COVID-19 CXRs.
-
-Other parts of the institutional data (AMC, CNUH, YNU, KNUH) used in this study cannot be shared without the signed agreement as they may contain private information.
-However, we found that similar results can be obtained when using an open-source repository for validation and the others for the model development. 
-
-For example, you can use Shenzen tuberculosis data containing 327 normal and 335 tuberculosis CXRs as test data.
-
-### Data preprocessing
-After downloading all data, dicom (.dcm) files should first be converted to image (.png) files.
-```
->  python dcm_to_npy.py --dir PATH/DCM/ --save_dir PATH/SAVE/
-```
-Then, locate all normal data into a folder name containing *Normal* and all tuberculosis data into a folder name containing *Tuberculosis*.
-
-Next, locate all training data to a folder and test data to another folder, and execute data splitter. It automatically split training data into small labeled subsets (10%) and 3 folded unlabeled subsets, and save test data in another folder.
-```
->  python data_splitter.py --train_folder PATH/TRAIN/ --test_folder PATH/TEST/ --save_dir PATH/SAVE/
-```
-
-After successful preprocessing, your data will be located as below.
-
-```
---- save_dir
-     --- labeled (containing about 10% of training data)
-            --- xxx.png
-            --- ...
-     --- fold_0 (unlabeled fold containing about 30% of training data)
-            --- xxx.png
-            --- ...
-     --- fold_1 (unlabeled fold containing about 30% of training data)
-            --- xxx.png
-            --- ...
-     --- fold_2 (unlabeled fold containing about 30% of training data)
-            --- xxx.png
-            --- ...
-     --- test (containing validation data)
-            --- xxx.png
-            --- ...
-```
-
-## Download pretrained weights
+## Pretrained weights
 You can download the pretrained weights on the CheXpert dataset in link below, which should be located as,
 
 https://drive.google.com/file/d/16y3eJRYQCg-B8rg9eB3XRA-6PcfHCNmA/view?usp=sharing
