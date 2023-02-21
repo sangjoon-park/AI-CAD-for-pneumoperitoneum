@@ -1,4 +1,4 @@
-## Deep learning-enabled detection of pneumoperitoneum in supine and erect abdominal radiography: a retrospective study with external validations"
+## Deep learning-enabled detection of pneumoperitoneum in supine and erect abdominal radiography: a retrospective study with external validations
 ### This is a code for application of DISTL (Distillation for self-supervised and self-train learning) along with the knowledge transfer for enhanced diagnosis of pneumoperitonuem.
 
 <div align="center">
