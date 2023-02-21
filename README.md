@@ -42,11 +42,11 @@ Our work consists of two steps.
 1. pre-training on a large corpus of chest radiograph (CheXpert) for knowledge transfer.
 2. fine-tune model on abdominal radiograph dataset with DISTL method.
 
-### Pre-training data (Chest radiograph)
+### 1. Pre-training data (Chest radiograph)
 
 The CheXpert data is an open-sourced large corpus of chest radiographs containing 14 corresponding label classes, and can be downloaded at https://stanfordmlgroup.github.io/competitions/chexpert/
 
-### Fine-tuning data (Abdominal radiograph)
+### 2. Fine-tuning data (Abdominal radiograph)
 
 Due to the patient privacy issue, the abdominal radiograph data cannot be uploaded, and can be accessed after the formal consent by contacting the first author (depecher@kaist.ac.kr) or corresponding author (seraph377@gmail.com).
 
